@@ -6,7 +6,7 @@ local packer_install_dir = vim.g.package_home .. "/opt/packer.nvim"
 
 local plug_url_format = ""
 if vim.g.is_linux then
-  plug_url_format = "https://hub.fastgit.org/%s"
+  plug_url_format = "https://github.com/%s"
 else
   plug_url_format = "https://github.com/%s"
 end
