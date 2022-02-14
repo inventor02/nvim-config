@@ -34,11 +34,11 @@ fi
 if [[ "$INSTALL_ANACONDA" = true ]]; then
     CONDA_DIR=$HOME/tools/anaconda
     CONDA_NAME=Anaconda.sh
-    CONDA_LINK="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2021.05-Linux-x86_64.sh"
+    CONDA_LINK="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2021.11-Linux-x86_64.sh"
 else
     CONDA_DIR=$HOME/tools/miniconda
     CONDA_NAME=Miniconda.sh
-    CONDA_LINK="https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh"
+    CONDA_LINK="https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-py39_4.10.3-Linux-x86_64.sh"
 fi
 
 if [[ ! "$PYTHON_INSTALLED" = true ]]; then
@@ -87,21 +87,21 @@ else
 fi
 
 #######################################################################
-#                Install node and vim-language-server                 #
+#                Install node and js-based language server            #
 #######################################################################
 NODE_DIR=$HOME/tools/nodejs
 NODE_SRC_NAME=$HOME/packages/nodejs.tar.gz
 # when download speed is slow, we can also use its mirror site: https://mirrors.ustc.edu.cn/node/v15.0.0/
 NODE_LINK="https://mirrors.ustc.edu.cn/node/v15.0.0/node-v15.0.0-linux-x64.tar.xz"
 if [[ -z "$(command -v node)" ]]; then
-    echo "Install Nodejs"
+    echo "Install Node.js"
     if [[ ! -f $NODE_SRC_NAME ]]; then
-        echo "Downloading nodejs and renaming"
+        echo "Downloading Node.js and renaming"
         wget $NODE_LINK -O "$NODE_SRC_NAME"
     fi
 
     if [[ ! -d "$NODE_DIR" ]]; then
-        echo "Creating nodejs directory under tools directory"
+        echo "Creating Node.js directory under tools directory"
         mkdir -p "$NODE_DIR"
         echo "Extracting to $HOME/tools/nodejs directory"
         tar xvf "$NODE_SRC_NAME" -C "$NODE_DIR" --strip-components 1
@@ -111,7 +111,7 @@ if [[ -z "$(command -v node)" ]]; then
         echo "export PATH=\"$NODE_DIR/bin:\$PATH\"" >> "$HOME/.bash_profile"
     fi
 else
-    echo "Nodejs is already installed. Skip installing it."
+    echo "Node.js is already installed. Skip installing it."
 fi
 
 # Install vim-language-server
@@ -125,7 +125,7 @@ fi
 #######################################################################
 RIPGREP_DIR=$HOME/tools/ripgrep
 RIPGREP_SRC_NAME=$HOME/packages/ripgrep.tar.gz
-RIPGREP_LINK="https://hub.fastgit.org/BurntSushi/ripgrep/releases/download/12.0.0/ripgrep-12.0.0-x86_64-unknown-linux-musl.tar.gz"
+RIPGREP_LINK="https://github.com/BurntSushi/ripgrep/releases/download/12.0.0/ripgrep-12.0.0-x86_64-unknown-linux-musl.tar.gz"
 if [[ -z "$(command -v rg)" ]] && [[ ! -f "$RIPGREP_DIR/rg" ]]; then
     echo "Install ripgrep"
     if [[ ! -f $RIPGREP_SRC_NAME ]]; then
@@ -163,7 +163,7 @@ fi
 #######################################################################
 CTAGS_SRC_DIR=$HOME/packages/ctags
 CTAGS_DIR=$HOME/tools/ctags
-CTAGS_LINK="https://hub.fastgit.org/universal-ctags/ctags.git"
+CTAGS_LINK="https://github.com/universal-ctags/ctags.git"
 if [[ ! -f "$CTAGS_DIR/bin/ctags" ]]; then
     echo "Install ctags"
 
@@ -219,10 +219,10 @@ if [[ -d "$NVIM_CONFIG_DIR" ]]; then
     mv "$NVIM_CONFIG_DIR" "$NVIM_CONFIG_DIR.backup"
 fi
 
-git clone --depth=1 https://hub.fastgit.org/jdhao/nvim-config.git "$NVIM_CONFIG_DIR"
+git clone --depth=1 https://github.com/jdhao/nvim-config.git "$NVIM_CONFIG_DIR"
 
 echo "Installing packer.nvim"
-git clone --depth=1 https://hub.fastgit.org/wbthomason/packer.nvim \
+git clone --depth=1 https://github.com/wbthomason/packer.nvim \
     ~/.local/share/nvim/site/pack/packer/opt/packer.nvim
 
 echo "Installing nvim plugins, please wait"
