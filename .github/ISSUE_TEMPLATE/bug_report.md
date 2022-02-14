@@ -6,17 +6,19 @@ labels: ''
 assignees: ''
 ---
 
-<!-- Before reporting: search existing issues and check the FAQ. -->
+<!-- Before reporting: make sure that you have read the doc (https://github.com/jdhao/nvim-config/tree/master/docs) and searched existing issues. -->
 
 - `nvim --version`:
 - terminal emulator and version:
 - Operating system/version:
+- Have you read and followed all steps in the [doc](https://github.com/jdhao/nvim-config/tree/master/docs):
+- Output of command `set runtimepath`:
 
 **Describe the bug**
 
 <!-- A clear and concise description of what the bug is. -->
 
-Steps to reproduce the behavior:
+Steps to reproduce the issue:
 
 1.
 2.
