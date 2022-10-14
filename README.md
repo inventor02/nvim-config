@@ -22,7 +22,7 @@
       <img alt="Latest release" src="https://img.shields.io/github/v/release/jdhao/nvim-config" />
     </a>
     <a href="https://github.com/neovim/neovim/releases/tag/stable">
-      <img src="https://img.shields.io/badge/Neovim-0.6.1-blueviolet.svg?style=flat-square&logo=Neovim&logoColor=green" alt="Neovim minimum version"/>
+      <img src="https://img.shields.io/badge/Neovim-0.7.2-blueviolet.svg?style=flat-square&logo=Neovim&logoColor=green" alt="Neovim minimum version"/>
     </a>
     <a href="https://github.com/jdhao/nvim-config/search?l=vim-script">
       <img src="https://img.shields.io/github/languages/top/jdhao/nvim-config" alt="Top languages"/>
@@ -36,67 +36,68 @@
 # Introduction
 
 This repo hosts my Nvim configuration for Linux, macOS, and Windows.
-`init.vim` is the config entry point for terminal Nvim,
+`init.lua` is the config entry point for terminal Nvim,
 and `ginit.vim` is the additional config file for [GUI client of Nvim](https://github.com/neovim/neovim/wiki/Related-projects#gui).
 
 My configurations are heavily documented to make it as clear as possible.
-While you can download the whole repository and use it, it is not recommended though.
+While you can clone the whole repository and use it, it is not recommended though.
 Good configurations are personal. Everyone should have his or her unique config file.
-You are encouraged to copy from this repo the part you feel useful and add it to your own Nvim config.
+You are encouraged to copy from this repo the part you want and add it to your own config.
+
+To reduce the possibility of breakage, **this config is only maintained for [the latest nvim stable release](https://github.com/neovim/neovim/releases/tag/stable).
+No effort is spent on maintaining backward compatibility.**
 
 # Install and setup
 
 See [doc here](docs/README.md) on how to install Nvim's dependencies, Nvim itself,
 and how to set up on different platforms (Linux, macOS, and Windows).
 
-**This config is tested against [Nvim v0.6.1 release](https://github.com/neovim/neovim/releases/tag/stable).
-No backward compatibility is guaranteed.**
-
 # Features #
 
 + Plugin management via [Packer.nvim](https://github.com/wbthomason/packer.nvim).
-+ Code auto-completion via [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) and [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig).
++ Code, snippet, word auto-completion via [nvim-cmp](https://github.com/hrsh7th/nvim-cmp).
++ Language server protocol (LSP) support via [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig).
 + Git integration via [vim-fugitive](https://github.com/tpope/vim-fugitive).
-+ Better escaping from insert mode via [better-escape.vim](https://github.com/jdhao/better-escape.vim).
++ Better escaping from insert mode via [better-escape.vim](https://github.com/nvim-zh/better-escape.vim).
 + Ultra-fast project-wide fuzzy searching via [LeaderF](https://github.com/Yggdroot/LeaderF).
 + Faster code commenting via [vim-commentary](https://github.com/tpope/vim-commentary).
 + Faster matching pair insertion and jump via [delimitMate](https://github.com/Raimondi/delimitMate).
 + Smarter and faster matching pair management (add, replace or delete) via [vim-sandwich](https://github.com/machakann/vim-sandwich).
 + Fast buffer jump via [hop.nvim](https://github.com/phaazon/hop.nvim).
-+ Ultra fast snippet insertion via [Ultisnips](https://github.com/SirVer/ultisnips).
-+ Beautiful status line via [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim).
++ Powerful snippet insertion via [Ultisnips](https://github.com/SirVer/ultisnips).
++ Beautiful statusline via [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim).
 + File tree explorer via [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua).
 + Better quickfix list with [nvim-bqf](https://github.com/kevinhwang91/nvim-bqf).
 + Show search index and count with [nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens).
 + Command line auto-completion via [wilder.nvim](https://github.com/gelguy/wilder.nvim).
-+ Keymap display via [which-key.nvim](https://github.com/folke/which-key.nvim).
++ User-defined mapping hint via [which-key.nvim](https://github.com/folke/which-key.nvim).
 + Asynchronous code execution via [asyncrun.vim](https://github.com/skywind3000/asyncrun.vim).
 + Code highlighting via [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter).
 + Code editing using true nvim inside browser via [firenvim](https://github.com/glacambre/firenvim).
-+ Color theme via [vim-gruvbox8](https://github.com/lifepillar/vim-gruvbox8) and other beautiful themes.
-+ Markdown writing and previewing via [vim-markdown](https://github.com/plasticboy/vim-markdown) and [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim).
++ Beautiful colorscheme via [sainnhe/gruvbox-material](https://github.com/sainnhe/gruvbox-material) and other colorschemes.
++ Markdown writing and previewing via [vim-markdown](https://github.com/preservim/vim-markdown) and [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim).
++ LaTeX editing and previewing via [vimtex](https://github.com/lervag/vimtex) <sup id="a1">[1](#f1)</sup>.
 + Animated GUI style notification via [nvim-notify](https://github.com/rcarriga/nvim-notify).
 + Smooth scroll experience via [neoscroll](https://github.com/karb94/neoscroll.nvim).
 + Tags navigation via [vista](https://github.com/liuchengxu/vista.vim).
 + Code formatting via [Neoformat](https://github.com/sbdchd/neoformat).
 + Undo management via [vim-mundo](https://github.com/simnalamburt/vim-mundo)
-+ LaTeX editing via [vimtex](https://github.com/lervag/vimtex) <sup id="a1">[1](#f1)</sup>.
 + ......
 
 # UI Demo
 
-For more UI demos, see [here](https://github.com/jdhao/nvim-config/issues/15).
+For more UI demos, check [here](https://github.com/jdhao/nvim-config/issues/15).
 
-## Start screen with alpha-nvim
+## Start screen with dashboard-nvim
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/16662357/139459989-0537ded4-c119-4749-99bf-b551ca1ba118.jpg" width="800">
+<img src="https://user-images.githubusercontent.com/16662357/183256752-fb23b215-a6b8-4646-beed-9999f52d53f1.png" width="800">
 </p>
 
-## fuzzy finding using LeaderF
+## File fuzzy finding using LeaderF
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/16662357/139462025-7bce98c5-d2d5-413f-9659-20545865cdca.gif" width="800">
+<img src="https://user-images.githubusercontent.com/16662357/183257017-2d9d7605-3c4b-4e1d-8955-30998f9b6f28.gif" width="800">
 </p>
 
 ## Code autocompletion with nvim-cmp
@@ -139,45 +140,50 @@ Go to a string starting with `se`
 
 # Shortcuts
 
-Some of the shortcuts I use frequently is listed here. In the following shortcuts, `<leader>` represents ASCII character `,`.
+Some of the shortcuts I use frequently are listed here. In the following shortcuts, `<leader>` represents ASCII character `,`.
 
-| Shortcut          | Mode          | platform        | Description                                                      |
-|-------------------|---------------|-----------------|------------------------------------------------------------------|
-| `<leader>ff`      | Normal        | Linux/macOS/Win | Fuzzy file searching in a floating window                        |
-| `<leader>fh`      | Normal        | Linux/macOS/Win | Fuzzy help file grepping in a floating window                    |
-| `<leader>fg`      | Normal        | Linux/macOS/Win | Fuzzy project-wide grepping in a floating window                 |
-| `<leader>ft`      | Normal        | Linux/macOS/Win | Fuzzy buffer tag searching in a floating window                  |
-| `<leader>fb`      | Normal        | Linux/macOS/Win | Fuzzy buffer switching in a floating window                      |
-| `<leader><Space>` | Normal        | Linux/macOS/Win | Remove trailing white spaces                                     |
-| `<leader>v`       | Normal        | Linux/macOS/Win | Reselect last pasted text                                        |
-| `<leader>ev`      | Normal        | Linux/macOS/Win | Edit Nvim config in a new tabpage                                |
-| `<leader>sv`      | Normal        | Linux/macOS/Win | Reload Nvim config                                               |
-| `<leader>st`      | Normal        | Linux/macOS/Win | Show highlight group for cursor text                             |
-| `<leader>q`       | Normal        | Linux/macOS/Win | Quit current window                                              |
-| `<leader>Q`       | Normal        | Linux/macOS/Win | Quit all window and close Nvim                                   |
-| `<leader>w`       | Normal        | Linux/macOS/Win | Save current buffer content                                      |
-| `<leader>y`       | Normal        | Linux/macOS/Win | Copy the content of entire buffer to default register            |
-| `<leader>cl`      | Normal        | Linux/macOS/Win | Toggle cursor column                                             |
-| `<leader>cd`      | Normal        | Linux/macOS/Win | Change current working directory to to the dir of current buffer |
-| `<space>t`        | Normal        | Linux/macOS/Win | Toggle tag window (show project tags in the right window)        |
-| `<leader>gs`      | Normal        | Linux/macOS/Win | Show Git status result                                           |
-| `<leader>gw`      | Normal        | Linux/macOS/Win | Run Git add for current file                                     |
-| `<leader>gd`      | Normal        | Linux/macOS/Win | Run git diff for current file                                    |
-| `<leader>gc`      | Normal        | Linux/macOS/Win | Run git commit                                                   |
-| `<leader>gpl`     | Normal        | Linux/macOS/Win | Run git pull                                                     |
-| `<leader>gpu`     | Normal        | Linux/macOS/Win | Run git push                                                     |
-| `<F9>`            | Normal        | Linux/macOS/Win | Run current source file (for Python, C++)                        |
-| `<F11>`           | Normal        | Linux/macOS/Win | Toggle spell checking                                            |
-| `<F12>`           | Normal        | Linux/macOS/Win | Toggle paste mode                                                |
-| `\x`              | Normal        | Linux/macOS/Win | Close location or quickfix window                                |
-| `\d`              | Normal        | Linux/macOS/Win | Close current buffer and go to previous buffer                   |
-| `{count}gb`       | Normal        | Linux/macOS/Win | Go to buffer {count}  or next buffer in the buffer list.         |
-| `Alt-m`           | Normal        | macOS/Win       | Markdown previewing in system browser                            |
-| `Alt-Shift-m`     | Normal        | macOS/Win       | Stopping Markdown previewing in system browser                   |
-| `ob`              | Normal/Visual | macOS/Win       | Open link under cursor or search visual selection                |
-| `ctrl-u`          | Insert        | Linux/macOS/Win | Turn word under cursor to upper case                             |
-| `ctrl-t`          | Insert        | Linux/macOS/Win | Turn word under cursor to title case                             |
-| `jk`              | Insert        | Linux/macOS/Win | Return to Normal mode without lagging                            |
+| Shortcut          | Mode          | platform        | Description                                                              |
+|-------------------|---------------|-----------------|--------------------------------------------------------------------------|
+| `<leader>ff`      | Normal        | Linux/macOS/Win | Fuzzy file searching in a floating window                                |
+| `<leader>fh`      | Normal        | Linux/macOS/Win | Fuzzy help file grepping in a floating window                            |
+| `<leader>fg`      | Normal        | Linux/macOS/Win | Fuzzy project-wide grepping in a floating window                         |
+| `<leader>ft`      | Normal        | Linux/macOS/Win | Fuzzy buffer tag searching in a floating window                          |
+| `<leader>fb`      | Normal        | Linux/macOS/Win | Fuzzy buffer switching in a floating window                              |
+| `<leader><Space>` | Normal        | Linux/macOS/Win | Remove trailing white spaces                                             |
+| `<leader>v`       | Normal        | Linux/macOS/Win | Reselect last pasted text                                                |
+| `<leader>ev`      | Normal        | Linux/macOS/Win | Edit Nvim config in a new tabpage                                        |
+| `<leader>sv`      | Normal        | Linux/macOS/Win | Reload Nvim config                                                       |
+| `<leader>st`      | Normal        | Linux/macOS/Win | Show highlight group for cursor text                                     |
+| `<leader>q`       | Normal        | Linux/macOS/Win | Quit current window                                                      |
+| `<leader>Q`       | Normal        | Linux/macOS/Win | Quit all window and close Nvim                                           |
+| `<leader>w`       | Normal        | Linux/macOS/Win | Save current buffer content                                              |
+| `<leader>y`       | Normal        | Linux/macOS/Win | Copy the content of entire buffer to default register                    |
+| `<leader>cl`      | Normal        | Linux/macOS/Win | Toggle cursor column                                                     |
+| `<leader>cd`      | Normal        | Linux/macOS/Win | Change current working directory to to the dir of current buffer         |
+| `<space>t`        | Normal        | Linux/macOS/Win | Toggle tag window (show project tags in the right window)                |
+| `<leader>gs`      | Normal        | Linux/macOS/Win | Show Git status result                                                   |
+| `<leader>gw`      | Normal        | Linux/macOS/Win | Run Git add for current file                                             |
+| `<leader>gd`      | Normal        | Linux/macOS/Win | Run git diff for current file                                            |
+| `<leader>gc`      | Normal        | Linux/macOS/Win | Run git commit                                                           |
+| `<leader>gpl`     | Normal        | Linux/macOS/Win | Run git pull                                                             |
+| `<leader>gpu`     | Normal        | Linux/macOS/Win | Run git push                                                             |
+| `<leader>gl`      | Normal/Visual | Linux/macOS/Win | Get perm link for current/visually-select lines
+| `<leader>gb`      | Normal        | macOS           | Browse current git repo in browser
+| `<F9>`            | Normal        | Linux/macOS/Win | Compile&run current source file (for C++, LaTeX, Lua, Python)            |
+| `<F11>`           | Normal        | Linux/macOS/Win | Toggle spell checking                                                    |
+| `<F12>`           | Normal        | Linux/macOS/Win | Toggle paste mode                                                        |
+| `\x`              | Normal        | Linux/macOS/Win | Close location or quickfix window                                        |
+| `\d`              | Normal        | Linux/macOS/Win | Close current buffer and go to previous buffer                           |
+| `{count}gb`       | Normal        | Linux/macOS/Win | Go to buffer `{count}` or next buffer in the buffer list.                |
+| `{operator}iB`    | Normal        | Linux/macOS/Win | Operate in the whole buffer, `{operator}` can be `v`, `y`, `c`, `d` etc. |
+| `Alt-k`           | Normal        | Linux/macOS/Win | Move current line or selected lines up                                   |
+| `Alt-j`           | Normal        | Linux/macOS/Win | Move current line or selected lines down                                 |
+| `Alt-m`           | Normal        | macOS/Win       | Markdown previewing in system browser                                    |
+| `Alt-Shift-m`     | Normal        | macOS/Win       | Stopping Markdown previewing in system browser                           |
+| `ob`              | Normal/Visual | macOS/Win       | Open link under cursor or search visual selection                        |
+| `ctrl-u`          | Insert        | Linux/macOS/Win | Turn word under cursor to upper case                                     |
+| `ctrl-t`          | Insert        | Linux/macOS/Win | Turn word under cursor to title case                                     |
+| `jk`              | Insert        | Linux/macOS/Win | Return to Normal mode without lagging                                    |
 
 # Custom commands
 
@@ -191,7 +197,7 @@ In addition to commands provided by various plugins, I have also created some cu
 
 # Contributing
 
-If you find anything that can be improved, do not hesitate to point it out or create a PR.
+If you find anything that needs improving, do not hesitate to point it out or create a PR.
 
 If you come across an issue, you can first use `:checkhealth` command provided by `nvim` to trouble-shoot yourself.
 Please read carefully the messages provided by health check.
@@ -209,4 +215,4 @@ You may also be interested in my posts on configuring Nvim:
 + [Nvim config on Windows 10](https://jdhao.github.io/2018/11/15/neovim_configuration_windows/)
 + [Nvim-qt config on Windows 10](https://jdhao.github.io/2019/01/17/nvim_qt_settings_on_windows/)
 
-<b id="f1">1:</b> Not enabled by default for Linux, see [this issue](https://github.com/jdhao/nvim-config/issues/4) on how to enable vimtex on Linux. [↩](#a1)
+<b id="f1">1:</b> Not enabled for Linux, you need to tweak [`lua/plugins.lua`](lua/plugins.lua) and change the condition for installing vimtex.[↩](#a1)
